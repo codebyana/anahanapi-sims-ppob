@@ -44,5 +44,3 @@ Respon Gagal
     "data": null
 }
 ```
-
-Jika Registrasi Berhasil masuk ke website [ TEXT ] Lalu input data sesuai data yang sudah di registration
