@@ -14,7 +14,7 @@ const Transaction = () => {
   const [profileData, setProfileData] = useState({
     firstName: 'User',
     lastName: '',
-    profileImage: '/images/Profile_Photo.PNG', // Hardcoded default avatar
+    profileImage: '/images/profile_photo.PNG', // Hardcoded default avatar
   });
   const [showBalance, setShowBalance] = useState(false);
   const limit = 5;

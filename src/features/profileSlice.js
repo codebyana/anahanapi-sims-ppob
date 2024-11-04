@@ -5,7 +5,7 @@ const initialState = {
     firstName: '',
     lastName: '',
     email: '',
-    profileImage: '/images/Profile_Photo.png',
+    profileImage: '/images/profile_Photo.png',
   },
 };
 

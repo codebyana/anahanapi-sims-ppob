@@ -16,7 +16,7 @@ const TopUp = () => {
   const [profileData, setProfileData] = useState({
     firstName: "User",
     lastName: "",
-    profileImage: "/images/Profile_Photo.PNG",
+    profileImage: "/images/profile_photo.PNG",
   });
   const [isConfirmationModalOpen, setIsConfirmationModalOpen] = useState(false);
   const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
@@ -98,11 +98,11 @@ const TopUp = () => {
       <div className="welcome-section">
         <div className="profile-info">
           <img
-            src={profileData.profileImage || "/images/Profile_Photo.PNG"} // Fallback image if profileImage is empty
+            src={profileData.profileImage || "/images/profile_photo.PNG"} // Fallback image if profileImage is empty
             alt="User Avatar"
             className="profile-avatar"
             onError={(e) => {
-              e.target.src = "/images/Profile_Photo.PNG";
+              e.target.src = "/images/profile_photo.PNG";
             }} // Fallback in case of broken image link
           />
           <div className="welcome-text">

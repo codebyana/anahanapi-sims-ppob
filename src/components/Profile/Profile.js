@@ -1,4 +1,3 @@
-// src/components/Profile/Profile.js
 import React from 'react';
 
 const Profile = () => {

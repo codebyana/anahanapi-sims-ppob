@@ -1,4 +1,3 @@
-// src/App.js
 import React from "react";
 import {
   BrowserRouter as Router,
@@ -13,7 +12,7 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import TopUp from "./components/Transactions/TopUp";
 import Transaction from "./components/Transactions/Transaction";
 import Account from "./components/Profile/Account";
-import Listrik from "./components/Transactions/Listrik"; // Import Listrik component
+import Listrik from "./components/Transactions/Listrik"; 
 
 function App() {
   return (

@@ -21,7 +21,7 @@ POST https://take-home-test-api.nutech-integrasi.com/registration
 
 ```json
 {
-  "email": "demo1@example.com",
+  "email": "demo@example.com",
   "first_name": "Ana",
   "last_name": "Hanapi",
   "password": "password123"

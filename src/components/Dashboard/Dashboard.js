@@ -14,21 +14,17 @@ const Dashboard = () => {
   const [profileData, setProfileData] = useState({
     firstName: 'User',
     lastName: '',
-    profileImage: '',
+    profileImage: localStorage.getItem("profileImageURL") || "/images/profile_photo.png", // Set default profile image
   });
 
   useEffect(() => {
-    // Check if profile data is in localStorage
     const savedProfile = JSON.parse(localStorage.getItem('profileData'));
-    
     if (savedProfile) {
       setProfileData(savedProfile);
     } else {
-      // Fetch profile data from API if not available in localStorage
       fetchProfileData();
     }
 
-    // Load balance from localStorage or fetch from API
     const savedBalance = localStorage.getItem('balance');
     if (savedBalance) {
       fetchBalance();
@@ -37,7 +33,6 @@ const Dashboard = () => {
     }
   }, [fetchBalance]);
 
-  // Fetch profile data from API
   const fetchProfileData = async () => {
     const token = localStorage.getItem('jwtToken');
     if (!token) {
@@ -55,11 +50,11 @@ const Dashboard = () => {
         email,
         firstName: first_name,
         lastName: last_name,
-        profileImage: profile_image || '', // Use the profile image URL from the response
+        profileImage: profile_image || localStorage.getItem("profileImageURL") || "/images/profile_photo.png", // Apply same default image logic
       };
 
       setProfileData(updatedProfile);
-      localStorage.setItem('profileData', JSON.stringify(updatedProfile)); // Persist profile data in localStorage
+      localStorage.setItem('profileData', JSON.stringify(updatedProfile));
 
     } catch (error) {
       console.error('Failed to fetch profile:', error);
@@ -75,10 +70,10 @@ const Dashboard = () => {
       <div className="welcome-section">
         <div className="profile-info">
           <img
-            src={profileData.profileImage || '/images/Profile_Photo.PNG'} // Fallback image if profileImage is empty
+            src={profileData.profileImage} // Consistent avatar display
             alt="User Avatar"
             className="profile-avatar"
-            onError={(e) => { e.target.src = '/images/Profile_Photo.PNG'; }} // Fallback in case of broken image link
+            onError={(e) => { e.target.src = '/images/profile_photo.png'; }} // Fallback in case of broken image link
           />
           <div className="welcome-text">
             <p>Selamat datang,</p>

@@ -1,8 +1,7 @@
-// src/components/Auth/Login.js
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import "./Login.css";
 
 const Login = () => {
@@ -91,9 +90,9 @@ const Login = () => {
           {message && <p className="message">{message}</p>}
           <p className="register-prompt">
             Belum punya akun?{" "}
-            <a href="/registration" className="register-link">
+            <Link to="/registration" className="register-link">
               Registrasi di sini
-            </a>
+            </Link>
           </p>
           <p className="demo-credentials">
             Username Demo: demo@example.com

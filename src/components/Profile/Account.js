@@ -10,7 +10,7 @@ const Account = () => {
     firstName: "",
     lastName: "",
     profileImage:
-      localStorage.getItem("profileImageURL") || "/images/Profile_Photo.png",
+      localStorage.getItem("profileImageURL") || "/images/profile_photo.png",
   });
   const [isEditing, setIsEditing] = useState(false);
   const [formData, setFormData] = useState(profileData);
@@ -28,23 +28,22 @@ const Account = () => {
 
       try {
         const response = await axios.get(
-          "https://take-home-test-api.nutech-integrasi.com/profile",
+          "https://take-home-test-api.nutech-integrasi.com/profile", // Absolute URL
           {
             headers: { Authorization: `Bearer ${token}` },
           }
         );
 
-        const { email, first_name, last_name, profile_image } =
-          response.data.data;
+        const { email, first_name, last_name, profile_image } = response.data.data;
         const updatedProfile = {
           email,
           firstName: first_name,
           lastName: last_name,
-          profileImage: profile_image || "/images/Profile_Photo.png",
+          profileImage: profile_image || "/images/profile_photo.png",
         };
         setProfileData(updatedProfile);
         setFormData(updatedProfile);
-        localStorage.setItem("profileData", JSON.stringify(updatedProfile)); // Persist profile data in localStorage
+        localStorage.setItem("profileData", JSON.stringify(updatedProfile));
       } catch (error) {
         console.error("Failed to fetch profile:", error);
         alert("Gagal memuat profil. Silakan coba lagi.");
@@ -78,7 +77,7 @@ const Account = () => {
 
     try {
       const response = await axios.put(
-        "https://take-home-test-api.nutech-integrasi.com/profile/update",
+        "https://take-home-test-api.nutech-integrasi.com/profile/update", // Absolute URL
         updateData,
         {
           headers: {
@@ -91,8 +90,7 @@ const Account = () => {
       if (response.status === 200) {
         const updatedProfile = {
           ...response.data.data,
-          profileImage:
-            response.data.data.profile_image || "/images/Profile_Photo.png",
+          profileImage: response.data.data.profile_image || "/images/profile_photo.png",
         };
         setProfileData(updatedProfile);
         localStorage.setItem("profileData", JSON.stringify(updatedProfile));
@@ -136,7 +134,7 @@ const Account = () => {
 
     try {
       const response = await axios.put(
-        "https://take-home-test-api.nutech-integrasi.com/profile/image",
+        "https://take-home-test-api.nutech-integrasi.com/profile/image", // Absolute URL
         formData,
         {
           headers: {
@@ -176,7 +174,7 @@ const Account = () => {
             alt="User Avatar"
             className="profile-avatar"
             onError={(e) => {
-              e.target.src = "/images/Profile_Photo.png";
+              e.target.src = "/images/profile_photo.png";
             }}
           />
           {isEditing && (

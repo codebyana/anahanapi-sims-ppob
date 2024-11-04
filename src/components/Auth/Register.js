@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
+import { Link } from 'react-router-dom'; 
 import './Register.css';
 
 const Register = () => {
@@ -99,7 +100,9 @@ const Register = () => {
             <button type="submit" className="register-button">Registrasi</button>
           </form>
           {message && <p className="message">{message}</p>}
-          <p className="login-prompt">Sudah punya akun? <a href="/login" className="login-link">Login di sini</a></p>
+          <p className="login-prompt">
+            Sudah punya akun? <Link to="/login" className="login-link">Login di sini</Link>
+          </p>
         </div>
         <div className="register-image">
           <img src="/images/Illustrasi_Login.png" alt="Illustration" />

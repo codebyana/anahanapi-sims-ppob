@@ -20,7 +20,7 @@ const Listrik = () => {
   const [profileData, setProfileData] = useState({
     firstName: "User",
     lastName: "",
-    profileImage: "/images/Profile_Photo.PNG",
+    profileImage: "/images/profile_photo.PNG",
   });
 
   const navigate = useNavigate();
@@ -89,11 +89,11 @@ const Listrik = () => {
       <div className="welcome-section">
         <div className="profile-info">
           <img
-            src={profileData.profileImage || "/images/Profile_Photo.PNG"}
+            src={profileData.profileImage || "/images/profile_photo.PNG"}
             alt="User Avatar"
             className="profile-avatar"
             onError={(e) => {
-              e.target.src = "/images/Profile_Photo.PNG";
+              e.target.src = "/images/profile_photo.PNG";
             }}
           />
           <div className="welcome-text">
