@@ -1,0 +1,183 @@
+/* src/components/Transactions/Transaction.css */
+
+.transaction {
+    padding: 40px 40px 20px;
+    font-family: Arial, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.welcome-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    max-width: 30%;
+}
+
+.profile-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.welcome-text p {
+    margin: 0;
+    color: #333;
+}
+
+.welcome-text p:first-child {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 4px;
+}
+
+.profile-name {
+    font-size: 20px;
+    color: #333;
+    font-weight: bold;
+}
+
+.balance-card {
+    width: 70%;
+    max-width: 600px;
+    background-color: #ff5a5f;
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.transaction-list {
+    margin-top: 20px;
+}
+
+.transaction-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    background-color: #fff;
+}
+
+.transaction-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.amount {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.amount.positive {
+    color: #00a86b; /* Hijau untuk transaksi masuk */
+}
+
+.amount.negative {
+    color: #ff5a5f; /* Merah untuk transaksi keluar */
+}
+
+.transaction-date-time {
+    font-size: 14px;
+    color: #666;
+    display: flex;
+    gap: 8px;
+}
+
+.transaction-type {
+    font-size: 14px;
+    color: #333;
+    align-self: center;
+}
+
+.show-more-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: transparent;
+    color: #ff5a5f;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.show-more-button:hover {
+    text-decoration: underline;
+}
+
+/* Media Query untuk Tampilan Mobile */
+@media (max-width: 768px) {
+    .transaction {
+        padding: 60px 20px 20px; /* Tambahkan padding atas untuk menambah jarak dari header */
+        font-family: Arial, sans-serif;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .welcome-section {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .profile-info {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .balance-card {
+        width: 100%;
+        max-width: none;
+        padding: 20px;
+    }
+
+    .transaction-item {
+        flex-direction: column; /* Susun kolom untuk layar kecil */
+        align-items: flex-start;
+    }
+
+    .transaction-left {
+        margin-bottom: 10px;
+    }
+
+    .transaction-type {
+        align-self: flex-start; /* Sesuaikan posisi di tampilan mobile */
+    }
+
+    .amount {
+        font-size: 16px; /* Kurangi ukuran font */
+    }
+
+    .transaction-date-time {
+        font-size: 12px; /* Kurangi ukuran font */
+    }
+
+    .show-more-button {
+        font-size: 14px;
+    }
+}
+
+.modal-logo {
+    width: 50px; /* Adjust the size as needed */
+    height: auto;
+    margin: 0 auto 10px;
+    display: block;
+}

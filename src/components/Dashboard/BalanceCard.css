@@ -1,0 +1,75 @@
+/* src/components/Dashboard/BalanceCard.css */
+
+.balance-card {
+    width: 50%; /* Lebar default untuk desktop */
+    max-width: 400px;
+    background-color: red;
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.balance-label {
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.balance-amount {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.balance-button {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.balance-button:hover {
+    text-decoration: underline;
+}
+
+/* Media Query untuk Tampilan Mobile */
+@media (max-width: 768px) {
+    .welcome-section {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        margin-top: 20px;
+    }
+
+    .profile-info {
+        max-width: 100%;
+        align-items: flex-start;
+        text-align: left;
+        margin-bottom: 20px;
+    }
+
+    .balance-card {
+        width: 100%; /* Ambil lebar penuh di layar kecil */
+        max-width: none;
+        padding: 15px; /* Kurangi padding agar lebih ramping di layar kecil */
+    }
+
+    .balance-label {
+        font-size: 14px; /* Kurangi ukuran font pada layar kecil */
+    }
+
+    .balance-amount {
+        font-size: 24px; /* Kurangi ukuran font pada layar kecil */
+    }
+
+    .balance-button {
+        font-size: 12px; /* Kurangi ukuran font pada layar kecil */
+    }
+}

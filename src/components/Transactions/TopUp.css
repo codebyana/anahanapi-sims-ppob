@@ -1,0 +1,292 @@
+/* src/components/Transactions/TopUp.css */
+
+.top-up {
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.welcome-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 90px; /* Tambahkan jarak lebih besar di atas untuk menghindari tumpang tindih dengan header */
+    margin-bottom: 30px;
+    width: 100%;
+    gap: 10px;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal {
+    background-color: #fff;
+    padding: 20px;
+    width: 300px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.success-icon {
+    background-color: #4CAF50;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    margin: 0 auto 15px;
+}
+
+.success-icon::before {
+    content: '✔';
+}
+
+.modal h2 {
+    font-size: 24px;
+    color: #333;
+    margin: 10px 0;
+}
+
+.modal-confirm-button,
+.modal-cancel-button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal-confirm-button {
+    background-color: #FF5A5F;
+    color: white;
+}
+
+.modal-cancel-button {
+    background-color: #ccc;
+    color: #333;
+}
+
+.modal-confirm-button:hover {
+    background-color: #e04e51;
+}
+
+.modal-cancel-button:hover {
+    background-color: #bbb;
+}
+
+.clickable-red-text {
+    color: #FF5A5F;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 15px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    max-width: 30%;
+}
+
+.profile-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.welcome-text {
+    text-align: left;
+}
+
+.welcome-text p {
+    margin: 0;
+    color: #333;
+}
+
+.welcome-text p:first-child {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 4px;
+}
+
+.profile-name {
+    font-size: 20px;
+    color: #333;
+    font-weight: bold;
+}
+
+.balance-card {
+    width: 70%;
+    max-width: 600px;
+    background-color: red;
+    color: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.top-up-content {
+    margin-top: 20px;
+    text-align: left; /* Mengatur posisi teks ke kiri */
+}
+
+.top-up-content h2,
+.top-up-content h3 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.top-up-input-container {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.top-up-field {
+    display: flex;
+    flex-direction: column;
+    width: 100%; 
+    gap: 10px;
+}
+
+.top-up-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.top-up-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #FF5A5F;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.top-up-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.quick-amount-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 100%;
+}
+
+.quick-amount-button {
+    padding: 8px;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.quick-amount-button:hover {
+    background-color: #e0e0e0;
+}
+
+/* Media Query untuk Tampilan Mobile */
+@media (max-width: 768px) {
+    .top-up {
+        padding: 60px 20px 20px;
+    }
+
+    .welcome-section {
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .profile-info {
+        max-width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .profile-avatar {
+        width: 50px;
+        height: 50px;
+        margin-right: 10px;
+    }
+
+    .balance-card {
+        width: 100%;
+        max-width: none;
+        padding: 20px;
+    }
+
+    .top-up-input-container {
+        flex-direction: column;
+    }
+
+    .quick-amount-buttons {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .top-up-button {
+        font-size: 14px;
+    }
+
+    .top-up-input {
+        font-size: 13px;
+        padding: 8px;
+    }
+
+    .quick-amount-button {
+        font-size: 13px;
+    }
+}
+
+.red-text {
+    color: red;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.amount-display {
+    font-size: 24px; /* Larger font size for amount */
+    font-weight: bold;
+    color: #333; /* Dark color to make it stand out */
+}
+
+.red-text:hover {
+    color: darkred; /* Optional: darker shade on hover */
+}

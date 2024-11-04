@@ -1,0 +1,189 @@
+.account {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.account-header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.profile-avatar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.profile-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  object-fit: cover;
+  position: relative;
+  border: 2px solid #ddd; /* Optional: Adds a subtle border for styling */
+}
+
+.edit-avatar-icon {
+  position: absolute;
+  bottom: 80px;  /* Positions icon closer to the bottom */
+  right: 240px;   /* Positions icon closer to the right edge */
+  background-color: #fff;
+  color: #333;
+  border-radius: 50%;
+  padding: 6px;
+  cursor: pointer;
+  font-size: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  
+}
+
+
+/* Hover effect for the edit icon */
+.edit-avatar-icon:hover {
+  background-color: #ff5a5f;
+  color: white;
+}
+
+.account-content {
+  text-align: center;
+  margin-top: 80px; /* Adjust margin for layout */
+}
+
+.account-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.account-form label {
+  text-align: left;
+  color: #666;
+  font-size: 14px;
+}
+
+.account-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Edit profile, save, cancel, and logout buttons */
+
+.upload-label {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.upload-label:hover {
+  background-color: #0056b3;
+}
+
+
+.edit-profile-button,
+.save-button,
+.cancel-button,
+.logout-button {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Edit Profile Button */
+.edit-profile-button {
+  background-color: transparent;
+  color: #ff5a5f;
+  border: 1px solid #ff5a5f;
+}
+
+/* Save Button */
+.save-button {
+  background-color: #ff5a5f;
+  color: white;
+  border: none;
+}
+
+/* Cancel Button */
+.cancel-button {
+  background-color: #ccc;
+  color: white;
+  border: none;
+}
+
+/* Logout Button */
+.logout-button {
+  background-color: red;
+  color: white;
+  border: none;
+}
+
+/* Upload Profile Image Section */
+.upload-input {
+  
+  display: none;
+}
+
+.upload-button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: red; /* Green for upload button */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.upload-button:hover {
+  background-color: red; /* Darker green on hover */
+}
+
+/* Success Message */
+.success-message {
+  color: green;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+/* Media Query to ensure consistent layout on mobile */
+@media (max-width: 768px) {
+  .profile-avatar {
+    width: 80px;
+    height: 80px;
+  }
+
+  .edit-avatar-icon {
+    bottom: 3px;
+    right: 3px;
+    padding: 5px;
+    font-size: 10px;
+  }
+
+  .account-content {
+    margin-top: 60px;
+  }
+
+  .upload-button {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .edit-profile-button,
+  .save-button,
+  .cancel-button,
+  .logout-button {
+    font-size: 14px;
+    padding: 8px;
+  }
+}

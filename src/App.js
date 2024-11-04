@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
+import { BalanceProvider } from "./context/BalanceContext";
+import Register from "./components/Auth/Register";
+import Login from "./components/Auth/Login";
+import Dashboard from "./components/Dashboard/Dashboard";
+import TopUp from "./components/Transactions/TopUp";
+import Transaction from "./components/Transactions/Transaction";
+import Account from "./components/Profile/Account";
+import Listrik from "./components/Transactions/Listrik"; // Import Listrik component
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BalanceProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Navigate to="/login" />} />
+          <Route path="/registration" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/topup" element={<TopUp />} />
+          <Route path="/transaction" element={<Transaction />} />
+          <Route path="/account" element={<Account />} />
+          <Route path="/services/PLN" element={<Listrik />} />
+        </Routes>
+      </Router>
+    </BalanceProvider>
   );
 }
 
